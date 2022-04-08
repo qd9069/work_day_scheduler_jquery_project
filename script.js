@@ -7,7 +7,7 @@ $("#currentDay").text(weekDay);
 
 // to set var for current hour
 var currentHour = moment ().format("H");
-// console.log(currentHour);
+console.log(currentHour);
 // var currentHour = 20;
 
 // set vars for each hour div
@@ -32,7 +32,7 @@ var hours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 
 for (var i=0; i < timeBlocks.length; i++) {
-    if (currentHour === hours[i]) {
+    if (currentHour == hours[i]) {
         timeBlocks[i].classList.add("present");
     } else 
     if (currentHour < hours[i]) {
@@ -72,58 +72,29 @@ var textArea17 = hour17.children[1];
 // set array for all textareas
 var textAreas = [textArea9, textArea10, textArea11, textArea12, textArea13, textArea14, textArea15, textArea16, textArea17];
 
-//----------------------------------------
-// set a for loop to save the event text entered for all time blocks
-for (var j=0; j < saveButton.length; j++) {
-    
-    // add EventListener to the save buttons
-    saveButton[j].addEventListener("click", function(event) {
-        event.preventDefault();
-
-        // get input value from the textarea
-        var text = textAreas[j].value.trim();
-
-        // use setItem to store the input text value in localStorage so that it can be used next time the user returns to the page
-        localStorage.setItem("event", text);
-
-    });
-
-    // get the input text value from local storage
-    var savedText = localStorage.getItem("event");
-    //  console.log(savedText);
-
-    // to keep the saved text persists
-    if (savedText) {
-        textAreas[j].value = savedText;
-    }
-
-
-}
-
-//----------------------------------------------
 
 
 // ---- for time block hour 9 only ------------------
 
-//  // add EventListener to the save buttons
-//  button9.addEventListener("click", function(event) {
-//     event.preventDefault();
+ // add EventListener to the save buttons
+ button9.addEventListener("click", function(event) {
+    event.preventDefault();
 
-//     // get input value from the textarea
-//     var text = textArea9.value.trim();
+    // get input value from the textarea
+    var text = textArea9.value.trim();
 
-//     // use setItem to store the input text value in localStorage so that it can be used next time the user returns to the page
-//     localStorage.setItem("event", text);
+    // use setItem to store the input text value in localStorage so that it can be used next time the user returns to the page
+    localStorage.setItem("event", text);
     
-// });
+});
 
-// // get the input text value from local storage
-// var savedText = localStorage.getItem("event");
-// //  console.log(savedText);
+// get the input text value from local storage
+var savedText = localStorage.getItem("event");
+//  console.log(savedText);
 
-// // to keep the saved text persists
-// if (savedText) {
-//     textArea9.value = savedText;
-// }
+// to keep the saved text persists
+if (savedText) {
+    textArea9.value = savedText;
+}
 
 //--------------------------------------------------------
