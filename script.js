@@ -7,7 +7,7 @@ $("#currentDay").text(weekDay);
 
 // to set var for current hour
 var currentHour = moment ().format("H");
-console.log(currentHour);
+// console.log(currentHour);
 // var currentHour = 20;
 
 // set vars for each hour div
@@ -42,22 +42,7 @@ for (var i=0; i < timeBlocks.length; i++) {
     }
 
 }
-    
-
-// save the event text in local storage when click on the save icon
-
-// set vars for each hour div's button
-var button9 = hour9.children[2];
-var button10 = hour10.children[2];
-var button11 = hour11.children[2];
-var button12 = hour12.children[2];
-var button13 = hour13.children[2];
-var button14 = hour14.children[2];
-var button15 = hour15.children[2];
-var button16 = hour16.children[2];
-var button17 = hour17.children[2];
-// set array for all save buttons
-var saveButton = [button9, button10, button11, button12, button13, button14, button15, button16, button17];
+  
 
 // set vars for each hour div's textarea
 var textArea9 = hour9.children[1];
@@ -74,27 +59,75 @@ var textAreas = [textArea9, textArea10, textArea11, textArea12, textArea13, text
 
 
 
-// ---- for time block hour 9 only ------------------
+// // ---- local storage for time block hour 9 only ------------------
 
- // add EventListener to the save buttons
- button9.addEventListener("click", function(event) {
-    event.preventDefault();
+//  // add EventListener to the save buttons
+//  button9.addEventListener("click", function(event) {
+//     event.preventDefault();
 
+//     // get input value from the textarea
+//     var text = textArea9.value.trim();
+
+//     // use setItem to store the input text value in localStorage so that it can be used next time the user returns to the page
+//     localStorage.setItem("event", text);
+    
+// });
+
+// // get the input text value from local storage
+// var savedText = localStorage.getItem("event");
+// //  console.log(savedText);
+
+// // to keep the saved text persists
+// if (savedText) {
+//     textArea9.value = savedText;
+// }
+
+// //--------------------------------------------------------
+
+
+// jQuery - save the event text in local storage when click on the save icon
+// set var for all of the hour div's buttons
+var allButtons = $(".btn");
+// console.log(buttons);
+
+
+// set function to save the even text in local storage
+allButtons.on("click", function () {
+    
+    // this - gives the button that I click on
+    // console.log(this);
+    var button = $(this);
+    
     // get input value from the textarea
-    var text = textArea9.value.trim();
+    var inputText = button.prev().val();
+    // console.log(inputText);
 
     // use setItem to store the input text value in localStorage so that it can be used next time the user returns to the page
-    localStorage.setItem("event", text);
-    
+    // to get the id for the time-block div
+    var id = button.parent(".time-block").attr("id");
+    // console.log(id);
+
+    localStorage.setItem(id, inputText);
+
 });
 
-// get the input text value from local storage
-var savedText = localStorage.getItem("event");
-//  console.log(savedText);
+// get the saved text value from local storage
+    var savedText9 = localStorage.getItem("hour-9");
+    var savedText10 = localStorage.getItem("hour-10");
+    var savedText11 = localStorage.getItem("hour-11");
+    var savedText12 = localStorage.getItem("hour-12");
+    var savedText13 = localStorage.getItem("hour-13");
+    var savedText14 = localStorage.getItem("hour-14");
+    var savedText15 = localStorage.getItem("hour-15");
+    var savedText16 = localStorage.getItem("hour-16");
+    var savedText17 = localStorage.getItem("hour-17");
+    var savedTexts = [savedText9, savedText10, savedText11, savedText12, savedText13, savedText14, savedText15, savedText16, savedText17];
 
 // to keep the saved text persists
-if (savedText) {
-    textArea9.value = savedText;
-}
+for (var j=0; j < savedTexts.length; j++) {
 
-//--------------------------------------------------------
+    if (savedTexts[j]) {
+        textAreas[j].value = savedTexts[j];
+    }
+
+}
