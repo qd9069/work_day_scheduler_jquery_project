@@ -8,7 +8,7 @@ $("#currentDay").text(weekDay);
 // to set var for current hour
 var currentHour = moment ().format("H");
 // console.log(currentHour);
-// var currentHour = 20;
+// var currentHour = 12;
 
 // set vars for each hour div
 var hour9 = document.getElementById("hour-9");
