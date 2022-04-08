@@ -2,7 +2,7 @@
 
 ## Link 
 
-### Please click [here](https://qd9069.github.io) to find the deployed project.
+### Please click [here](https://qd9069.github.io/work_day_scheduler_jquery_project/) to find the deployed project.
 
 
 ## Table of Contents
