@@ -12,8 +12,8 @@
 - [Usage](#usage)
 - [Technology](#technology)
 - [Assets](#assets)
-- [Credits](#credits)
 - [License](#license)
+- [Credits](#credits)
 
 ## Description
 
