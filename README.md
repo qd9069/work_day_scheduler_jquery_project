@@ -13,7 +13,7 @@
 - [Technology](#technology)
 - [Assets](#assets)
 - [Credits](#credits)
-
+- [License](#license)
 
 ## Description
 
@@ -53,6 +53,9 @@ Here is a simple introduction for the Work Day Scheduler:
 The following image demonstrates the web application's appearance and functionality:
 
 ![image of the Work Day Scheduler](work-day-scheduler.png)
+
+## License
+Copyright (c) 2022 Elaine D. Released under the MIT [License](./LICENSE).
 
 ---
 ## Credits
